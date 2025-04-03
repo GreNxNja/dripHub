@@ -1,0 +1,59 @@
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white; /* Changed color to white */
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.mobile-nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
