@@ -3,12 +3,13 @@
   display: none;
   cursor: pointer;
   margin-left: 20px;
+  z-index: 20; /* Ensure hamburger stays above mobile nav */
 }
 
 .hamburger .bar {
   width: 25px;
   height: 3px;
-  background-color: white; /* Changed color to white */
+  background-color: white; /* White color for bars */
   margin: 5px 0;
   transition: 0.4s;
 }
@@ -17,19 +18,25 @@
   display: none;
   flex-direction: column;
   background-color: #f0f0f0;
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed to stay in place during scroll */
   top: 60px;
   left: 0;
   width: 100%;
   text-align: center;
   padding: 10px 0;
   z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
 }
 
 .mobile-nav a {
   padding: 10px;
   text-decoration: none;
   color: black;
+  transition: background-color 0.3s;
+}
+
+.mobile-nav a:hover {
+  background-color: #e0e0e0;
 }
 
 @media (max-width: 768px) {
